@@ -1,5 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities
+@import "tailwindcss";
 
-
+@theme {
+  --color-airbnb: #ff385c;
+  --color-airbnb-dark: #d50027;
+}
