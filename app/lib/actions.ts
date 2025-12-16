@@ -1,6 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
+import apiService from '@/app/services/apiService';
 
 export async function handleLogin(userId: string, accessToken: string, refreshToken: string){
     const cookieStore = await cookies(); // Add await here
@@ -46,4 +47,9 @@ export async function getAccessToken() {
     //let accessToken = cookies().get('session_access_token')?.value;
 
    return accessToken;
+}
+
+export async function getProperty(id: string) {
+    const response = await apiService.get(`/api/properties/${id}/`);
+    return response;
 }

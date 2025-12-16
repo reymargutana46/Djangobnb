@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { PropertyType }from "./PropertyList";
+import Link from "next/link";
+import { PropertyType } from "./PropertyList";
 
 interface PropertyProps {
     property: PropertyType
@@ -9,7 +10,7 @@ const PropertyListItem: React.FC<PropertyProps> = ({
     property
 }) => {
     return (
-        <div className="cursor-pointer">
+        <Link href={`/properties/${property.id}`} className="cursor-pointer">
             <div className="relative overflow-hidden aspect-square rounded-xl">
                 <Image
                     fill
@@ -26,9 +27,9 @@ const PropertyListItem: React.FC<PropertyProps> = ({
             </div>
 
             <div className="mt-2">
-                <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong>per night</p>
+                <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong> per night</p>
             </div>
-        </div>
+        </Link>
     )
 }
 
