@@ -7,7 +7,7 @@ const apiService = {
          const token = await getAccessToken();
 
         return new Promise((resolve, reject) => {
-            fetch(`http://localhost:8000/${url}`, {
+            fetch(`http://localhost:8000${url}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

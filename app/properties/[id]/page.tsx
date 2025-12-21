@@ -34,7 +34,7 @@ const PropertyDetailPage = async ({params}: { params: Promise<{id: string}> }) =
                     <hr />
 
                     <Link 
-                        href={`/Landlords/${property.landlord.id}`}
+                        href={`/landlords/${property.landlord.id}`}
                         className="py-6 flex items-center space-x-4"
                     >
                         {property.landlord.avatar_url && (
