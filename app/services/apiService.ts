@@ -56,6 +56,7 @@ const apiService = {
             }));
         })
     },
+    
     postWithoutToken: async function (url: string, data: any): Promise<any> {
         console.log('post', url, data);
 

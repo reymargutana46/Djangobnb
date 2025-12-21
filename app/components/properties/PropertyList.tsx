@@ -6,9 +6,18 @@ import apiService from '@/app/services/apiService';
 
 export type PropertyType = {
     id: string;
-    title: string;
-    image_url: string;
     price_per_night: number;
+    guests: number;  // Added this line
+    bedrooms: number; // Added this line
+    bathrooms: number; // Added this line
+    title: string;    // Added this line
+    description: string; // Added this line
+    image_url: string;  // Added this line
+    landlord: {         // Added this line
+        id: string;     // Added this line
+        name: string;   // Added this line
+        avatar_url?: string; // Added this line
+    }; 
 }
 
 const PropertyList = () => {

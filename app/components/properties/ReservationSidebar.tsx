@@ -1,4 +1,26 @@
-const ReservationSidebar = ({ property }: { property: any }) => {
+export type Property = {
+    id: string;
+    price_per_night: number;
+    guests: number;
+    bedrooms: number;
+    bathrooms: number;
+    title: string;
+    description: string;
+    image_url: string;
+    landlord: {
+        id: string;
+        name: string;
+        avatar_url?: string;
+    };
+}
+
+interface ReservationSidebarProps {
+    property: Property;
+}
+
+const ReservationSidebar: React.FC<ReservationSidebarProps> = ({ 
+    property 
+}) => {
     return (
         <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
             <h2 className="mb-5 text-2xl">${property.price_per_night} per night</h2>
