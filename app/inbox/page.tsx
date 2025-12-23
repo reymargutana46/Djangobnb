@@ -29,29 +29,10 @@ const InboxPage = async () => {
         const response = await apiService.get(`/api/chat/`);
         conversations = Array.isArray(response) ? response : [];
         
-        // If no conversations exist, create a sample conversation
-        if (conversations.length === 0) {
-            // Create a sample conversation that matches the ConversationDetail content
-            conversations = [{
-                id: 'sample-conversation-id',
-                users: [{
-                    id: 'sample-user-id',
-                    name: 'Sample User',
-                    avatar_url: ''
-                }]
-            }];
-        }
+
     } catch (error) {
         console.error('Error fetching conversations:', error);
-        // Even if API fails, provide a sample conversation
-        conversations = [{
-            id: 'sample-conversation-id',
-            users: [{
-                id: 'sample-user-id',
-                name: 'Sample User',
-                avatar_url: ''
-            }]
-        }];
+        conversations = [];
     }
 
     return (
